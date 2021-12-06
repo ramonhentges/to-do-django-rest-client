@@ -50,9 +50,9 @@ class CreateUpdateUserSerializer(serializers.ModelSerializer):
         return user
 
     def to_representation(self, obj):
-        ret = super(CreateUpdateUserSerializer, self).to_representation(obj)
-        ret.pop('password')
-        return ret
+        user = super(CreateUpdateUserSerializer, self).to_representation(obj)
+        user.pop('password')
+        return user
 
     class Meta:
         model = User
